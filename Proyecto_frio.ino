@@ -1,10 +1,10 @@
-int Sensor = 0;         //Pin que lee la temperatura
-int umbral = 10;        //Temperatura configurada
-const int control = 3;  //Pin de alarma
+int Sensor = 0;         //Pin that reads temperature
+int umbral = 10;        //Set temperature
+const int control = 3;  //Alarm pin
 
 
 #include <SoftwareSerial.h>
-SoftwareSerial SIM900(7, 8); // Configura el puerto serial para el SIM900
+SoftwareSerial SIM900(7, 8); // Configure the serial port for the SIM900
 
 void setup()
 {
@@ -39,10 +39,10 @@ void loop()
 
 void llamar()
 {
-  Serial.println("Realizando llamada..");
+  Serial.println("calling..");
   SIM900.println("ATD626305062;");
   delay(10000);
   SIM900.println("ATH");
   delay(1000);
-  Serial.println("Llamada finalizada");
+  Serial.println("call ended");
 }
